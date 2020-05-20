@@ -2,7 +2,6 @@ import streamlit as st
 
 from sklearn.datasets import load_digits
 from sklearn.decomposition import PCA
-import plotly.express as px
 import matplotlib.pyplot as plt
 
 
@@ -22,13 +21,6 @@ def read_digits():
     return load_digits()
 
 def plot_digits(digits):
-    #fig = plt.figure( figsize=(15,15))
-    #fig.subplots_adjust(hspace=0.95, wspace=0.05)
-    #for i in range(40):
-    #    ax =fig.add_subplot(10,10,1+i, xticks=[], yticks=[])
-    #    ax.imshow(digits.images[i],cmap=plt.cm.gray_r, interpolation='nearest')
-    #    ax.text(0,9, str(digits.target[i]))
-    #st.pyplot()
     fig, axes = plt.subplots(4,10, figsize=(10, 4), subplot_kw= { 'xticks':[], 'yticks':[]}, gridspec_kw=dict(hspace = 0.95, wspace=0.05))
     for i, ax in enumerate(axes.flat):
         ax.imshow(digits.images[i].reshape(8,8),cmap='binary', interpolation='nearest', clim=(0,16))
