@@ -8,11 +8,6 @@ verify_ssl = true
 [packages]
 streamlit = "*"
 pandas = "*"
-textblob = "*"
-bokeh = "*"
-emoji = "*"
-altair = "*"
-seaborn = "*"
 sklearn = "*"
 
 [requires]
